@@ -20,7 +20,7 @@ def get_requirements() -> List[str]:
 
 
 
-setup(name='Insurance Price Prediction',
+setup(name='InsurancePricePrediction',
       version='0.0.1',
       description= """The goal of this project is to provide individuals with an estimate of 
                     how much coverage they need based on their individual health situation. 
