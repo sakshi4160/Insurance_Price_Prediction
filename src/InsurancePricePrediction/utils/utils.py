@@ -39,12 +39,12 @@ def evaluate_model(X_train, y_train,X_test, y_test, models):
         raise customexception(e,sys)   
     
 
-def load_model(file_path):
+def load_model(filepath):
     try:
-        with open(file_path,'rb') as f:
+        with open(filepath,'rb') as f:
             return pickle.load(f)
     
     except Exception as e:
         
-        logging.info('Exception occured while loading model ')
-        CustomException(e,sys)
+        logging.info('Exception occured while loading model')
+        customexception(e,sys)
