@@ -1,0 +1,155 @@
+
+
+<style>
+    .page {
+      content: "";
+      background-image: url("https://media.istockphoto.com/id/1012323872/photo/medical-insurance-concept-with-family-and-stethoscope-on-wooden-desk.jpg?s=612x612&w=0&k=20&c=fBRwbx_iRR50Kr4uw_ofRrq7nRryP_BeCm5doXpX2Sc=");
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: 125px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .container{
+        margin: 10% auto;
+        width: 810px;
+        color: #fff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #000;
+        opacity: 0.7;
+    }
+    .section{
+        opacity: 1;
+        padding: 10px;
+        display: inline-block;
+        font-size: 1.25em;
+        margin-right: 20px;
+        min-width: 360px;
+    }
+    .title{
+        width:50%;
+        float: left;
+    }
+    .description{
+        width:50%;
+        float: left;
+    }
+    input, select{
+        padding: 10px;
+        width: 150px;
+    }
+  </style>
+  <div>
+    <form action="{{url_for('predict_datapoint')}}" method="POST">
+    <h1 style="background-color: rgb(24, 146, 194); text-align: center; padding: 30px 0; font-size: 3em;">INSURANCE PREMIUM PREDICTION</h1>
+    <div class="page">
+        <div class="container">
+  
+  
+          
+          <div class="section">
+            <div class="title">age</div>
+            <div class="description">
+                <input type="text" id="age" name="age" placeholder="Enter AGE(int)">
+            </div>
+          </div>
+  
+  
+        <div class="section">
+          <div class="title">smoker</div>
+          <div class="description">
+            <select id="smoker" name="smoker">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+              
+            </select>
+          </div>
+        </div>
+  
+  
+  
+  
+        <div class="section">
+          <div class="title">region</div>
+          <div class="description">
+            <select id="region" name="region">
+              <option value="Northeast">Northeast</option>
+              <option value="Northwest">Northwest</option>
+              <option value="Southeast">Southeast</option>
+              <option value="Southwest">Southwest</option>
+            </select>
+          </div>
+        </div>
+  
+  
+  
+        <div class="section">
+          <div class="title">sex</div>
+          <div class="description">
+            <select id="sex" name="sex">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              
+            </select>
+          </div>
+        </div>
+  
+  
+  
+        
+  
+  
+      
+  
+        <div class="section">
+          <div class="title">bmi</div>
+          <div class="description">
+              <input type="text" id="bmi" name="bmi" placeholder="Enter  BMI (float)">
+          </div>
+        </div>
+
+        
+        <div class="section">
+          <div class="title">children</div>
+          <div class="description">
+            <select id="children" name="children">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+
+            </select>
+          </div>
+        </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+            <div style="width:100%; float: left; text-align: center;">
+   
+                <input type="submit" value="Submit" style="width: 200px; height: 50px; background-color: rgb(247, 8, 8); color: white; font-size: 23px;">
+           
+              </div>
+              
+              <h1><h1>The Insurance  Premium cost is {{final_result}} </h1></h1>
+                
+                
+            </form>
+        </div>
+    </div>
+  
+  </div>
