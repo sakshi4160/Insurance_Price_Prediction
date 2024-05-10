@@ -7,6 +7,9 @@ from src.InsurancePricePrediction.exception import customexception
 import joblib
 from src.InsurancePricePrediction.utils.utils import load_model
 from sklearn.pipeline import Pipeline
+from src.InsurancePricePrediction.constant import *
+from src.InsurancePricePrediction.config.configuration import *
+
 
 
 class BatchPrediction(object):
