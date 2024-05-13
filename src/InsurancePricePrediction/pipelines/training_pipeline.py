@@ -12,15 +12,16 @@ from src.InsurancePricePrediction.exception import customexception
 import pandas as pd
 
 
-obj=DataIngestion()
-
-train_data_path,test_data_path=obj.initiate_data_ingestion()
-
-
-data_transformation = DataTransformation()
-
-train_arr,test_arr=data_transformation.initialize_data_transformation(train_data_path,test_data_path)
-
-
-model_trainer=ModelTrainer()
-model_trainer.initate_model_training(train_arr,test_arr)
+class Train:
+    def __init__(self):
+        self.c = 0
+        print(f"************************************{self.c}**************************************")
+    
+    def main(self):
+        
+        obj = DataIngestion()
+        train_data,test_data = obj.initiate_data_ingestion()
+        data_transformation = DataTransformation()
+        train_arr,test_arr,_ = data_transformation.inititate_data_transformation(train_data,test_data)
+        model_trainer = ModelTrainer()
+        print(model_trainer.inititate_model_training(train_arr,test_arr))

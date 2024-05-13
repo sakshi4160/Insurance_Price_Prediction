@@ -7,6 +7,7 @@ from src.InsurancePricePrediction.components.data_transformation import DataTran
 from src.InsurancePricePrediction.components.model_trainer import ModelTrainer
 from src.InsurancePricePrediction.components.data_ingestion import DataIngestion
 from flask import Flask, request,render_template,jsonify
+from src.InsurancePricePrediction.pipelines.training_pipeline import Train
 
 from src.InsurancePricePrediction.pipelines.prediction_pipeline import CustomData, PredictionPipeline
 from batch.batch import BatchPrediction
