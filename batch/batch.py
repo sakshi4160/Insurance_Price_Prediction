@@ -10,7 +10,8 @@ from sklearn.pipeline import Pipeline
 from src.InsurancePricePrediction.constant import *
 from src.InsurancePricePrediction.config.configuration import *
 
-
+transformer_file_path = os.path.join("artifacts","preprocessor.pkl")
+model_file_path = os.path.join("artifacts","model.pkl")
 
 class BatchPrediction(object):
     def __init__(self,input_file,

@@ -13,9 +13,19 @@ DATA_DIR = 'Data'
 DATA_DIR_KEY = 'insurance.csv'
 
 
+
+# artifacts - > data_transformation -> processor /preprocessor.pkl ->and transformation -> train.csv and test.csv
+
+# model training
+
+# model training
+MODEL_TRAINER_KEY = 'model_trainer'
+MODEL_OBJECT = 'model.pkl'
+
 # batch prediction 
 
-PREDICTION_FOLDER = 'batch_Prediction'
+
+PREDICTION_FOLDER = 'Batch_Prediction'
 PREDICTION_CSV = 'Prediction_csv'
 PREDICTION_FILE = "output.csv"
 TRANFORM_DATA = 'Processed_transformation'
