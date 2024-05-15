@@ -22,6 +22,6 @@ class Train:
         obj = DataIngestion()
         train_data,test_data = obj.initiate_data_ingestion()
         data_transformation = DataTransformation()
-        train_arr,test_arr,_ = data_transformation.inititate_data_transformation(train_data,test_data)
+        train_arr,test_arr,_ = data_transformation.initialize_data_transformation(train_data,test_data)
         model_trainer = ModelTrainer()
-        print(model_trainer.inititate_model_training(train_arr,test_arr))
+        print(model_trainer.initate_model_training(train_arr,test_arr))
