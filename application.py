@@ -26,7 +26,7 @@ ALLOWED_EXTENSIONS = {'csv'}
 
 # Streamlit sidebar
 st.sidebar.header("Navigation")
-selected_page = st.sidebar.radio("Select a Page", ["Home", "Train","Predict"])
+selected_page = st.sidebar.radio("Select a Page", ["Home","Predict","Batch Prediction","Train"])
 
 if selected_page == "Home":
     st.header("Home Page")
@@ -75,30 +75,30 @@ elif selected_page == "Predict":
         result = int(pred[0])
         st.success(f"Predicted Insurance Premium is: {result}")
 
-# elif selected_page == "Batch Prediction":
-#     st.header("Batch Prediction")
+elif selected_page == "Batch Prediction":
+     st.header("Batch Prediction")
 
-#     # Create a file uploader
-#     st.subheader("Upload a CSV File")
-#     uploaded_file = st.file_uploader("Choose a CSV file", type=["csv"])
+     # Create a file uploader
+     st.subheader("Upload a CSV File")
+     uploaded_file = st.file_uploader("Choose a CSV file", type=["csv"])
 
-#     if uploaded_file is not None:
-#         # Save the uploaded file
-#         file_path = os.path.join(UPLOAD_FOLDER, secure_filename(uploaded_file.name))
-#         with open(file_path, "wb") as f:
-#             f.write(uploaded_file.read())
+     if uploaded_file is not None:
+         # Save the uploaded file
+         file_path = os.path.join(UPLOAD_FOLDER, secure_filename(uploaded_file.name))
+         with open(file_path, "wb") as f:
+             f.write(uploaded_file.read())
         
-#         logging.info("CSV received and Uploaded")
+         logging.info("CSV received and Uploaded")
 
-#         # Perform batch prediction using the uploaded file
-#         batch = BatchPrediction(file_path, model_file_path, transformer_file_path)
-#         batch.start_batch_prediction()
+         # Perform batch prediction using the uploaded file
+         batch = BatchPrediction(file_path, model_file_path, transformer_file_path)
+         batch.start_batch_prediction()
 
        
 
-#         # After batch prediction and displaying the success message, add a download button for the predicted file
-#         output = "Batch Prediction Done"
-#         st.success(output)
+         # After batch prediction and displaying the success message, add a download button for the predicted file
+         output = "Batch Prediction Done"
+         st.success(output)
 
       
 
